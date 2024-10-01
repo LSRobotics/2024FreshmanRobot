@@ -16,5 +16,7 @@ public final class Constants {
   public static class OperatorConstants {
     public static final int kDriverControllerPort = 0;
     public static final int trapMotorID = 10;
+    public static final int shooterMotor1Id = 19;
+    public static final int shooterMotor2ID = 20;
   }
 }
