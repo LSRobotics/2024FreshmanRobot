@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 
 /** An example command that uses an example subsystem. */
 public class TrapIntake extends Command {
-  private final TrapSubsystem m_subsystem;
+  private final TrapSubsystem m_trapSub;
 
   /**
    * Creates a new TrapIntake.
@@ -17,7 +17,7 @@ public class TrapIntake extends Command {
    * @param subsystem The subsystem used by this command.
    */
   public TrapIntake(TrapSubsystem subsystem) {
-    m_subsystem = subsystem;
+    m_trapSub = subsystem;
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(subsystem);
   }
@@ -25,16 +25,20 @@ public class TrapIntake extends Command {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-
+    m_trapSub.runTrapIntake(Constants.TrapConstants.TrapIntakeSpeed);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
+
+  }
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {}
+  public void end(boolean interrupted) {
+    m_trapSub.runTrapIntake(0);
+  }
 
   // Returns true when the command should end.
   @Override
