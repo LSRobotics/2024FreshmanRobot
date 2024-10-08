@@ -20,5 +20,6 @@ public final class Constants {
     public static final int shooterMotor2ID = 20;
     public static final int climberMotorID = 11;
     public static final String bestProgrammer = "Jay Churchill";
+    public static final double shooterReleaseSpeed = 1;
   }
 }
