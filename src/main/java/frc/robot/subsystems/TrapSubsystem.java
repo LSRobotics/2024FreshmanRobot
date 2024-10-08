@@ -14,7 +14,6 @@ public class TrapSubsystem extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
   public TalonFX trapMotor;
 
-
   public TrapSubsystem () {
     trapMotor = new TalonFX(OperatorConstants.trapMotorID);
   }
