@@ -20,6 +20,9 @@ public final class Constants {
     public static final int shooterMotor2ID = 20;
     public static final int climberMotorID = 11;
   }
+  public static class TrapConstants {
+    public static final double trapSpeed = 1;
+  }
   public static class ClimberConstants {
     public static final int downSpeed = -1;
   }
