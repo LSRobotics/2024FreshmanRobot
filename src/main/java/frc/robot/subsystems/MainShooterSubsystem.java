@@ -4,8 +4,11 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix6.hardware.TalonFX;
+
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants.OperatorConstants;
 
 public class MainShooterSubsystem extends SubsystemBase {
   public TalonFX mainShooterOne;
@@ -13,7 +16,7 @@ public class MainShooterSubsystem extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
   public MainShooterSubsystem() {
     mainShooterOne = new TalonFX(OperatorConstants.shooterMotor1Id);
-    mainShooterTwo = new TalonFx(OperatorConstants.shooterMotor2ID);
+    mainShooterTwo = new TalonFX(OperatorConstants.shooterMotor2ID);
   }
   
   public void runShooter(double speed) {
