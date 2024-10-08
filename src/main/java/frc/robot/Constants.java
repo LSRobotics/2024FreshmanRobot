@@ -19,6 +19,8 @@ public final class Constants {
     public static final int shooterMotor1Id = 19;
     public static final int shooterMotor2ID = 20;
     public static final int climberMotorID = 11;
-    public static final String bestProgrammer = "Jay Churchill";
+  }
+  public static class ClimberConstants {
+    public static final int downSpeed = -1;
   }
 }
