@@ -9,16 +9,16 @@ import frc.robot.subsystems.ClimberSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 
 /** An example command that uses an example subsystem. */
-public class ClimberDownCommand extends Command {
+public class ClimberDown extends Command {
   private final ClimberSubsystem climberSubsystem;
   double speed;
 
   /**
-   * Creates a new ClimberDownCommand.
+   * Creates a new ClimberDown.
    *
    * @param subsystem The subsystem used by this command.
    */
-  public ClimberDownCommand(ClimberSubsystem subsystem, double speed) {
+  public ClimberDown(ClimberSubsystem subsystem, double speed) {
     climberSubsystem = subsystem;
     this.speed = speed;
     // Use addRequirements() here to declare subsystem dependencies.

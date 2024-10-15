@@ -52,8 +52,8 @@ public class RobotContainer {
     m_driverController.a().whileTrue(new ShooterRelease(m_mainShooterSubsystem));
     m_driverController.leftBumper().whileTrue(new TrapIntake(m_trapSubsystem));
     m_driverController.rightBumper().whileTrue(new TrapRelease(m_trapSubsystem));
-    m_driverController.leftTrigger(Constants.triggerDeadzone).whileTrue(new ClimberClimb(m_climberSubsystem, m_driverController.getLeftTriggerAxis() - Constants.triggerDeadzone));
-    m_driverController.rightTrigger(Constants.triggerDeadzone).whileTrue(new ClimberDownCommand(m_climberSubsystem, m_driverController.getRightTriggerAxis() - Constants.triggerDeadzone));
+    m_driverController.leftTrigger(Constants.triggerDeadzone).whileTrue(new ClimberUp(m_climberSubsystem, m_driverController.getLeftTriggerAxis() - Constants.triggerDeadzone));
+    m_driverController.rightTrigger(Constants.triggerDeadzone).whileTrue(new ClimberDown(m_climberSubsystem, m_driverController.getRightTriggerAxis() - Constants.triggerDeadzone));
   }
 
   /**
