@@ -25,7 +25,8 @@ public static final String bestProgrammer = "Jay Churchill";
     public static final double shootIntakeSpeed = 1;
   }
   public static class TrapConstants {
-    public static final double trapSpeed = 1;
+    public static final double trapIntakeSpeed = 1;
+    public static final double trapReleaseSpeed = 1;
   }
   public static class ClimberConstants {
     public static final int downSpeed = -1;
