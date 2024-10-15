@@ -20,7 +20,9 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
-  private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
+  private final ClimberSubsystem m_climberSubsystem = new ClimberSubsystem();
+  private final MainShooterSubsystem m_mainShooterSubsystem = new MainShooterSubsystem();
+  private final TrapSubsystem m_trapSubsystem = new TrapSubsystem();
 
   // Replace with CommandPS4Controller or CommandJoystick if needed
   private final CommandXboxController m_driverController =
@@ -46,9 +48,12 @@ public class RobotContainer {
     new Trigger(m_exampleSubsystem::exampleCondition)
         .onTrue(new ExampleCommand(m_exampleSubsystem));
 
-    // Schedule `exampleMethodCommand` when the Xbox controller's B button is pressed,
-    // cancelling on release.
-    m_driverController.b().whileTrue(m_exampleSubsystem.exampleMethodCommand());
+    m_driverController.b().whileTrue(new ShooterIntake(m_mainShooterSubsystem));
+    m_driverController.a().whileTrue(new ShooterRelease(m_mainShooterSubsystem));
+    m_driverController.leftBumper().whileTrue(new TrapIntake(m_trapSubsystem));
+    m_driverController.rightBumper().whileTrue(new TrapRelease(m_trapSubsystem));
+    m_driverController.leftTrigger(Constants.triggerDeadzone).whileTrue(new ClimberClimb(m_climberSubsystem, m_driverController.getLeftTriggerAxis() - Constants.triggerDeadzone));
+    m_driverController.rightTrigger(Constants.triggerDeadzone).whileTrue(new ClimberDownCommand(m_climberSubsystem, m_driverController.getRightTriggerAxis() - Constants.triggerDeadzone));
   }
 
   /**
