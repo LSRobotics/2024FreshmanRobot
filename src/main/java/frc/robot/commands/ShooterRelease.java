@@ -4,6 +4,7 @@
 
 package frc.robot.commands;
 
+import frc.robot.Constants;
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.subsystems.MainShooterSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -25,7 +26,7 @@ public class ShooterRelease extends Command {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    m_ShooterSubsystem.runShooter(OperatorConstants.shooterReleaseSpeed);
+    m_ShooterSubsystem.runShooter(Constants.ShooterConstants.shooterReleaseSpeed);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
