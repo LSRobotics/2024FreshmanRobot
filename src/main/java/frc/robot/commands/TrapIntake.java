@@ -4,8 +4,9 @@
 
 package frc.robot.commands;
 
-import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.Constants;
 import edu.wpi.first.wpilibj2.command.Command;
+import frc.robot.subsystems.TrapSubsystem;
 
 /** An example command that uses an example subsystem. */
 public class TrapIntake extends Command {
@@ -37,7 +38,7 @@ public class TrapIntake extends Command {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    m_trapSub.runTrapIntake(0);
+    m_trapSub.runTrap(0);
   }
 
   // Returns true when the command should end.
