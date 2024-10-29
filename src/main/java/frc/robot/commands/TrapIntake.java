@@ -4,8 +4,7 @@
 
 package frc.robot.commands;
 
-import frc.robot.Constants;
-import frc.robot.subsystems.TrapSubsystem;
+import frc.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 
 /** An example command that uses an example subsystem. */
@@ -23,10 +22,10 @@ public class TrapIntake extends Command {
     addRequirements(subsystem);
   }
 
-  // Called when the command is initially scheduled.
+  // Called when the command is initxially scheduled.
   @Override
   public void initialize() {
-    m_trapSub.runTrap(Constants.TrapConstants.trapSpeed);
+    m_trapSub.runTrapIntake(Constants.TrapConstants.TrapIntakeSpeed);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -38,7 +37,7 @@ public class TrapIntake extends Command {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    m_trapSub.runTrap(0);
+    m_trapSub.runTrapIntake(0);
   }
 
   // Returns true when the command should end.
