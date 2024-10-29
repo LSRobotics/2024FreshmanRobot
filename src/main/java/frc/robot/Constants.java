@@ -29,6 +29,7 @@ public final class Constants {
   public static class TrapConstants {
     public static final double trapIntakeSpeed = 1;
     public static final double trapReleaseSpeed = 1;
+    public static final double trapSpeed = 0;
   }
   public static class ClimberConstants {
     public static final int upSpeed = -1;
