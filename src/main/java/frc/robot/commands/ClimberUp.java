@@ -4,11 +4,12 @@
 
 package frc.robot.commands;
 
+import frc.robot.subsystems.ClimberSubsystem;
 import frc.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 
 /** An example command that uses an example subsystem. */
-public class ClimerClimb extends Command {
+public class ClimberUp extends Command {
   private final ClimberSubsystem m_climb;
   private double m_speed;
 
@@ -22,7 +23,7 @@ public class ClimerClimb extends Command {
     m_speed = speed;
 
     // Use addRequirements() here to declare subsystem dependencies.
-    addRequirements(ClimberSubsystem);
+    addRequirements(m_climb);
   }
 
   // Called when the command is initially scheduled.

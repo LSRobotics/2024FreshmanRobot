@@ -4,19 +4,20 @@
 
 package frc.robot.commands;
 
-import frc.robot.subsystems.MainShooterSubsytem;
+import frc.robot.Constants.OperatorConstants;
+import frc.robot.subsystems.MainShooterSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 
 /** An example command that uses an example subsystem. */
 public class ShooterRelease extends Command {
-  private final MainShooterSubsytem m_ShooterSubsytem;
+  private final MainShooterSubsystem m_ShooterSubsystem;
 
   /**
    * Creates a new ExampleCommand.
    *
    * @param subsystem The subsystem used by this command.
    */
-  public ShooterRelease(MainShooterSubsytem subsystem) {
+  public ShooterRelease(MainShooterSubsystem subsystem) {
     m_ShooterSubsystem = subsystem;
     addRequirements(subsystem);
   }
