@@ -8,7 +8,6 @@ import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.Autos;
 import frc.robot.commands.ClimberDown;
 import frc.robot.commands.ClimberUp;
-import frc.robot.commands.ExampleCommand;
 import frc.robot.commands.ShooterIntake;
 import frc.robot.commands.ShooterRelease;
 import frc.robot.commands.TrapIntake;
