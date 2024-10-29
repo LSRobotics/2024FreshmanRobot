@@ -30,8 +30,8 @@ public class RobotContainer {
   private final TrapSubsystem m_trapSubsystem = new TrapSubsystem();
 
   // Replace with CommandPS4Controller or CommandJoystick if needed
-  private final CommandXboxController m_driverController =
-      new CommandXboxController(OperatorConstants.kDriverControllerPort);
+  private final CommandXboxController m_operatorController =
+      new CommandXboxController(OperatorConstants.kOperatorControllerPort);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
@@ -49,12 +49,12 @@ public class RobotContainer {
    * joysticks}.
    */
   private void configureBindings() {
-    m_driverController.b().whileTrue(new ShooterIntake(m_mainShooterSubsystem));
-    m_driverController.a().whileTrue(new ShooterRelease(m_mainShooterSubsystem));
-    m_driverController.leftBumper().whileTrue(new TrapIntake(m_trapSubsystem));
-    m_driverController.rightBumper().whileTrue(new TrapRelease(m_trapSubsystem));
-    m_driverController.leftTrigger(OperatorConstants.triggerDeadzone).whileTrue(new ClimberUp(m_climberSubsystem, m_driverController.getLeftTriggerAxis() - OperatorConstants.triggerDeadzone));
-    m_driverController.rightTrigger(OperatorConstants.triggerDeadzone).whileTrue(new ClimberDown(m_climberSubsystem, m_driverController.getRightTriggerAxis() - OperatorConstants.triggerDeadzone));
+    m_operatorController.b().whileTrue(new ShooterIntake(m_mainShooterSubsystem));
+    m_operatorController.a().whileTrue(new ShooterRelease(m_mainShooterSubsystem));
+    m_operatorController.leftBumper().whileTrue(new TrapIntake(m_trapSubsystem));
+    m_operatorController.rightBumper().whileTrue(new TrapRelease(m_trapSubsystem));
+    m_operatorController.leftTrigger(OperatorConstants.triggerDeadzone).whileTrue(new ClimberUp(m_climberSubsystem, m_operatorController.getLeftTriggerAxis() - OperatorConstants.triggerDeadzone));
+    m_operatorController.rightTrigger(OperatorConstants.triggerDeadzone).whileTrue(new ClimberDown(m_climberSubsystem, m_operatorController.getRightTriggerAxis() - OperatorConstants.triggerDeadzone));
   }
 
   /**
