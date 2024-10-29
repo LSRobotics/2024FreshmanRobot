@@ -28,7 +28,7 @@ public class TrapRelease extends Command {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    m_TrapSubsystem.runTrap(Constants.TrapConstants.trapSpeed);
+    m_TrapSubsystem.runTrap(Constants.TrapConstants.trapReleaseSpeed);
   }
 
   // Called every time the scheduler runs while the command is scheduled.

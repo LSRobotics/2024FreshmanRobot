@@ -15,7 +15,7 @@ public class ClimberUp extends Command {
   /**
    * Creates a new ExampleCommand.
    *
-   * @param  The subsystem used by this command.
+   * @param climbSub The subsystem used by this command.
    */
   public ClimberUp(ClimberSubsystem climbSub, double speed) {
     m_climb = climbSub;

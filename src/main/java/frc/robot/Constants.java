@@ -20,14 +20,18 @@ public final class Constants {
     public static final int trapMotorID = 21;
     public static final int shooterMotor1Id = 19;
     public static final int shooterMotor2ID = 20;
-    public static final int climberMotorID = 22;
+    public static final int climberMotorID = 11;
+  }
+  public static class ShooterConstants {
     public static final double shooterReleaseSpeed = 1;
-    public static final double shootIntakeSpeed = 1;
+    public static final double shooterIntakeSpeed = 1;
   }
   public static class TrapConstants {
-    public static final double trapSpeed = 1;
+    public static final double trapIntakeSpeed = 1;
+    public static final double trapReleaseSpeed = 1;
   }
   public static class ClimberConstants {
+    public static final int upSpeed = -1;
     public static final int downSpeed = -1;
   }
 }
