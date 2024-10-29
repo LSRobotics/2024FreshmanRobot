@@ -6,8 +6,14 @@ package frc.robot;
 
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.Autos;
+import frc.robot.commands.ClimberDown;
+import frc.robot.commands.ClimberUp;
 import frc.robot.commands.ExampleCommand;
-import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.commands.ShooterIntake;
+import frc.robot.commands.ShooterRelease;
+import frc.robot.commands.TrapIntake;
+import frc.robot.commands.TrapRelease;
+import frc.robot.subsystems.*;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
@@ -44,16 +50,12 @@ public class RobotContainer {
    * joysticks}.
    */
   private void configureBindings() {
-    // Schedule `ExampleCommand` when `exampleCondition` changes to `true`
-    new Trigger(m_exampleSubsystem::exampleCondition)
-        .onTrue(new ExampleCommand(m_exampleSubsystem));
-
     m_driverController.b().whileTrue(new ShooterIntake(m_mainShooterSubsystem));
     m_driverController.a().whileTrue(new ShooterRelease(m_mainShooterSubsystem));
     m_driverController.leftBumper().whileTrue(new TrapIntake(m_trapSubsystem));
     m_driverController.rightBumper().whileTrue(new TrapRelease(m_trapSubsystem));
-    m_driverController.leftTrigger(Constants.triggerDeadzone).whileTrue(new ClimberUp(m_climberSubsystem, m_driverController.getLeftTriggerAxis() - Constants.triggerDeadzone));
-    m_driverController.rightTrigger(Constants.triggerDeadzone).whileTrue(new ClimberDown(m_climberSubsystem, m_driverController.getRightTriggerAxis() - Constants.triggerDeadzone));
+    m_driverController.leftTrigger(OperatorConstants.triggerDeadzone).whileTrue(new ClimberUp(m_climberSubsystem, m_driverController.getLeftTriggerAxis() - OperatorConstants.triggerDeadzone));
+    m_driverController.rightTrigger(OperatorConstants.triggerDeadzone).whileTrue(new ClimberDown(m_climberSubsystem, m_driverController.getRightTriggerAxis() - OperatorConstants.triggerDeadzone));
   }
 
   /**
@@ -63,6 +65,7 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An example command will be run in autonomous
-    return Autos.exampleAuto(m_exampleSubsystem);
+    // TODO: ACTUALLY DO SOMETHING.
+    return Autos.exampleAuto(null);
   }
 }
