@@ -18,9 +18,9 @@ public final class Constants {
     public static final int kDriverControllerPort = 0;
     public static final double triggerDeadzone = 0.1;
     public static final int trapMotorID = 21;
-    public static final int shooterMotor1Id = 19;
+    public static final int shooterMotor1Id = 22;
     public static final int shooterMotor2ID = 20;
-    public static final int climberMotorID = 22;
+    public static final int climberMotorID = 19;
   }
   public static class ShooterConstants {
     public static final double shooterReleaseSpeed = 1;
