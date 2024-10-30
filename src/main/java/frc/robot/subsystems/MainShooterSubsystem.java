@@ -5,18 +5,20 @@
 package frc.robot.subsystems;
 
 import com.ctre.phoenix6.hardware.TalonFX;
+import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkLowLevel.MotorType;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.OperatorConstants;
 
 public class MainShooterSubsystem extends SubsystemBase {
-  public TalonFX mainShooterOne;
-  public TalonFX mainShooterTwo;
+  public CANSparkMax mainShooterOne;
+  public CANSparkMax mainShooterTwo;
   /** Creates a new ExampleSubsystem. */
   public MainShooterSubsystem() {
-    mainShooterOne = new TalonFX(OperatorConstants.shooterMotor1Id);
-    mainShooterTwo = new TalonFX(OperatorConstants.shooterMotor2ID);
+    mainShooterOne = new CANSparkMax(OperatorConstants.shooterMotor1Id, MotorType.kBrushed);
+    mainShooterTwo = new CANSparkMax(OperatorConstants.shooterMotor2ID, MotorType.kBrushed);
   }
   
   public void runShooter(double speed) {

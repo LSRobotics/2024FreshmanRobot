@@ -4,17 +4,18 @@
 
 package frc.robot.subsystems;
 
-import com.ctre.phoenix6.hardware.TalonFX;
+import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkLowLevel.MotorType;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.OperatorConstants;
 
 public class TrapSubsystem extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
-  public TalonFX trapMotor;
+  public CANSparkMax trapMotor;
 
   public TrapSubsystem () {
-    trapMotor = new TalonFX(OperatorConstants.trapMotorID);
+    trapMotor = new CANSparkMax(OperatorConstants.trapMotorID, MotorType.kBrushed);
   }
 
   public void runTrap(double speed) {

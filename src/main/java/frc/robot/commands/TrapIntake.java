@@ -26,7 +26,7 @@ public class TrapIntake extends Command {
   // Called when the command is initxially scheduled.
   @Override
   public void initialize() {
-    m_trapSub.runTrap(Constants.TrapConstants.trapSpeed);
+    m_trapSub.runTrap(Constants.TrapConstants.trapIntakeSpeed);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
