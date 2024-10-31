@@ -88,15 +88,15 @@ public class RobotContainer {
     m_operatorController.rightTrigger(OperatorConstants.triggerDeadzone).whileTrue(new ClimberDown(m_climberSubsystem, m_operatorController.getRightTriggerAxis() - OperatorConstants.triggerDeadzone));
 
     drivetrain.setDefaultCommand( // Drivetrain will execute this command periodically
-        drivetrain.applyRequest(() -> drive.withVelocityX(-joystick.getLeftY() * MaxSpeed) // Drive forward with
+        drivetrain.applyRequest(() -> drive.withVelocityX(joystick.getLeftY() * MaxSpeed) // Drive forward with
                                                                                            // negative Y (forward)
-            .withVelocityY(-joystick.getLeftX() * MaxSpeed) // Drive left with negative X (left)
-            .withRotationalRate(-joystick.getRightX() * MaxAngularRate) // Drive counterclockwise with negative X (left)
+            .withVelocityY(joystick.getLeftX() * MaxSpeed) // Drive left with negative X (left)
+            .withRotationalRate(joystick.getRightX() * MaxAngularRate) // Drive counterclockwise with negative X (left)
         ));
 
     joystick.a().whileTrue(drivetrain.applyRequest(() -> brake));
     joystick.b().whileTrue(drivetrain
-        .applyRequest(() -> point.withModuleDirection(new Rotation2d(-joystick.getLeftY(), -joystick.getLeftX()))));
+        .applyRequest(() -> point.withModuleDirection(new Rotation2d(joystick.getLeftY(), joystick.getLeftX()))));
 
     // reset the field-centric heading on left bumper press
     joystick.leftBumper().onTrue(drivetrain.runOnce(() -> drivetrain.seedFieldRelative()));
