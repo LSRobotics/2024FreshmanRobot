@@ -15,7 +15,7 @@ package frc.robot;
 public final class Constants {
   public static final String prayer = "oh boy!";
   public static class OperatorConstants {
-    public static final int kDriverControllerPort = 0;
+    public static final int kOperatorControllerPort = 0;
     public static final double triggerDeadzone = 0.1;
     public static final int trapMotorID = 21;
     public static final int shooterMotor1Id = 22;
